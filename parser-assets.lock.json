@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "docling_version": "2.66.0",
+  "root": "models/docling",
+  "hf_models": [
+    {
+      "model_id": "docling-project/docling-layout-heron",
+      "revision": "8f39ad3c0b4c58e9c2d2c84a38465abf757272d8",
+      "local_path": "models/docling/docling-project--docling-layout-heron",
+      "declared_license": "apache-2.0",
+      "files": [
+        {
+          "path": "README.md",
+          "size_bytes": 3219,
+          "sha256": null,
+          "git_blob_sha1": "2c5b32c47fb9789ed49606988f58bc4741a731ab"
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 3268,
+          "sha256": null,
+          "git_blob_sha1": "98434d37ace2399b824d685b0795ab7a68e53dd2"
+        },
+        {
+          "path": "model.safetensors",
+          "size_bytes": 171658996,
+          "sha256": "00333a43451945aaf89db8ca9c0a17e75d1537c17db60fdb91aa95f4c7929e0c",
+          "git_blob_sha1": null
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size_bytes": 444,
+          "sha256": null,
+          "git_blob_sha1": "fcdff16b42e5ebc51d28f59184490c6eff91a88b"
+        }
+      ]
+    },
+    {
+      "model_id": "docling-project/docling-models",
+      "revision": "fc0f2d45e2218ea24bce5045f58a389aed16dc23",
+      "local_path": "models/docling/docling-project--docling-models",
+      "declared_license": "cdla-permissive-2.0",
+      "files": [
+        {
+          "path": "README.md",
+          "size_bytes": 3413,
+          "sha256": null,
+          "git_blob_sha1": "887b06ffad8cc669c554c6bebd703ba7bd11a417"
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 41,
+          "sha256": null,
+          "git_blob_sha1": "4dc84c9101238bb955158144660155da99438490"
+        },
+        {
+          "path": "model_artifacts/tableformer/accurate/tableformer_accurate.safetensors",
+          "size_bytes": 212758388,
+          "sha256": "2a7d6c924b3cd12fb99a09280ca9c33a89c5d60b93253617d2e088c1a40374d9",
+          "git_blob_sha1": null
+        },
+        {
+          "path": "model_artifacts/tableformer/accurate/tm_config.json",
+          "size_bytes": 7060,
+          "sha256": null,
+          "git_blob_sha1": "5036aa114b9393f607440cb0f6cc54229b5b30e1"
+        }
+      ]
+    }
+  ],
+  "ocr_archives": [
+    {
+      "model_id": "JaidedAI/EasyOCR/craft_mlt_25k.pth",
+      "source_url": "https://github.com/JaidedAI/EasyOCR/releases/download/pre-v1.1.6/craft_mlt_25k.zip",
+      "release_asset_id": 23576075,
+      "declared_software_license": "apache-2.0",
+      "archive": {
+        "path": "craft_mlt_25k.zip",
+        "size_bytes": 77251756,
+        "sha256": "8dc6a1c703a89ed56308ef742d26ebd45c656248cbbbda6e7fe60e569f873e65"
+      },
+      "member": {
+        "path": "craft_mlt_25k.pth",
+        "size_bytes": 83152330,
+        "sha256": "4a5efbfb48b4081100544e75e1e2b57f8de3d84f213004b14b85fd4b3748db17",
+        "upstream_md5": "2f8227d2def4037cdb3b34389dcf9ec1"
+      },
+      "hash_provenance": "Archive downloaded by HTTPS from official release; extracted weight matched EasyOCR1.7.2 config MD5; SHA256 computed locally on those verified bytes."
+    },
+    {
+      "model_id": "JaidedAI/EasyOCR/cyrillic_g2.pth",
+      "source_url": "https://github.com/JaidedAI/EasyOCR/releases/download/v1.6.1/cyrillic_g2.zip",
+      "release_asset_id": 76523014,
+      "declared_software_license": "apache-2.0",
+      "archive": {
+        "path": "cyrillic_g2.zip",
+        "size_bytes": 14140353,
+        "sha256": "34060353accfadd4e429f28d392f88cf70c2fc9d2633710a3b00c21412dc627b"
+      },
+      "member": {
+        "path": "cyrillic_g2.pth",
+        "size_bytes": 15256523,
+        "sha256": "48d0f3b58f28aa64651ab1032cc2d498c4de25135829668e87c14e7a07529f29",
+        "upstream_md5": "19f85f43d9128a89ac21b8d6a06973fe"
+      },
+      "hash_provenance": "Archive downloaded by HTTPS from official release; extracted weight matched EasyOCR1.7.2 config MD5; SHA256 computed locally on those verified bytes."
+    }
+  ]
+}

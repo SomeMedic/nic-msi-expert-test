@@ -1,0 +1,6 @@
+* text=auto eol=lf
+/models.lock.json -text
+/uv.lock -text
+/pyproject.toml -text
+/config/runtime/*.json -text
+/config/prompts/p07.v1/* -text

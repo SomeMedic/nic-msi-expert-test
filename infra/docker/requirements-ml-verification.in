@@ -1,0 +1,9 @@
+# Test-only supplement; versions constrained to the frozen workspace uv.lock.
+pytest==9.1.1
+pytest-asyncio==1.4.0
+httpx==0.28.1
+pypdf==6.18.0
+# Actual isolated PostgreSQL fixtures execute the project's migration coordinator.
+alembic==1.19.2
+langgraph-checkpoint-postgres==3.1.2
+python-multipart==0.0.32

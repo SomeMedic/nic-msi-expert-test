@@ -1,0 +1,102 @@
+FROM astral/uv:0.10.3@sha256:7a88d4c4e6f44200575000638453a5a381db0ae31ad5c3a51b14f8687c9d93a3 AS uv
+FROM python:3.12.14-slim-bookworm@sha256:782412e85d0f0984994c290652577d4018aff08145c85b262bb63dc0c7522254 AS workspace
+COPY --from=uv /uv /usr/local/bin/uv
+ENV UV_PYTHON_DOWNLOADS=never UV_LINK_MODE=copy UV_COMPILE_BYTECODE=1 \
+    PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PATH=/app/.venv/bin:$PATH
+WORKDIR /app
+COPY pyproject.toml uv.lock .python-version ./
+COPY packages ./packages
+COPY apps/backend ./apps/backend
+COPY apps/agent-runtime ./apps/agent-runtime
+COPY apps/ingestion-worker ./apps/ingestion-worker
+COPY apps/retrieval-ml ./apps/retrieval-ml
+COPY apps/outbox-publisher ./apps/outbox-publisher
+ARG EXPERT_PACKAGE=expert-backend
+RUN --mount=type=cache,target=/root/.cache/uv uv sync --frozen --no-dev --no-editable --package "$EXPERT_PACKAGE"
+COPY scripts/bootstrap.py ./scripts/bootstrap.py
+COPY models.lock.json ./models.lock.json
+COPY config/parsing/region-reviews.json ./config/parsing/region-reviews.json
+COPY config/runtime ./config/runtime
+COPY config/prompts/p07.v1 ./config/prompts/p07.v1
+COPY scripts/prepare_runtime_identity.py ./scripts/prepare_runtime_identity.py
+RUN groupadd --gid 10001 expert && useradd --uid 10001 --gid expert --no-create-home expert
+
+FROM workspace AS service
+USER 10001:10001
+EXPOSE 8000
+HEALTHCHECK --interval=10s --timeout=4s --start-period=15s --retries=6 \
+    CMD ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=3).read()"]
+
+# The sole schema coordinator needs both Alembic and the pinned PostgresSaver.
+# Dependency resolution happens while building, before any database lock exists.
+FROM workspace AS migration
+RUN --mount=type=cache,target=/root/.cache/uv uv sync --frozen --no-dev --no-editable --package expert-backend --package expert-agent-runtime
+COPY scripts/migrate.py ./scripts/migrate.py
+COPY infra/postgres ./infra/postgres
+USER 10001:10001
+HEALTHCHECK NONE
+CMD ["python", "scripts/migrate.py", "--dsn-file", "/run/secrets/migrate_database_dsn"]
+
+# Heavy models are installed only when this explicit target/profile is requested.
+FROM workspace AS retrieval-ml
+COPY infra/docker/requirements-ml-linux.lock /app/requirements-ml.lock
+RUN --mount=type=cache,target=/root/.cache/uv uv pip install --python /app/.venv/bin/python --torch-backend cpu --require-hashes -r /app/requirements-ml.lock && uv pip check
+ENV HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HUB_DISABLE_TELEMETRY=1 \
+    DO_NOT_TRACK=1 HF_HOME=/tmp/huggingface TOKENIZERS_PARALLELISM=false
+USER 10001:10001
+EXPOSE 8000
+HEALTHCHECK --interval=15s --timeout=4s --start-period=120s --retries=10 \
+    CMD ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=3).read()"]
+
+# Keep CPU PyTorch and FRIDA's exact environment unchanged. CUDA is an optional
+# scorer interpreter, selected at runtime by EXPERT_RERANKER_DEVICE.
+FROM python:3.12.14-slim-bookworm@sha256:782412e85d0f0984994c290652577d4018aff08145c85b262bb63dc0c7522254 AS reranker-cuda-dependencies
+COPY --from=uv /uv /usr/local/bin/uv
+ENV UV_PYTHON_DOWNLOADS=never UV_LINK_MODE=copy UV_COMPILE_BYTECODE=1
+COPY infra/docker/requirements-reranker-cuda-linux.lock /tmp/requirements-reranker-cuda.lock
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv venv /app/.venv-reranker-cuda && \
+    uv pip install --python /app/.venv-reranker-cuda/bin/python --require-hashes \
+    -r /tmp/requirements-reranker-cuda.lock && \
+    uv pip check --python /app/.venv-reranker-cuda/bin/python
+
+FROM retrieval-ml AS retrieval-ml-cuda
+COPY --from=reranker-cuda-dependencies /app/.venv-reranker-cuda /app/.venv-reranker-cuda
+
+# Parser dependencies are cached independently of changing application source.
+# The parent keeps its lightweight workspace environment; only the child uses
+# this CPU environment. No runtime installation or model download is permitted.
+FROM python:3.12.14-slim-bookworm@sha256:782412e85d0f0984994c290652577d4018aff08145c85b262bb63dc0c7522254 AS parser-dependencies
+COPY --from=uv /uv /usr/local/bin/uv
+ENV UV_PYTHON_DOWNLOADS=never UV_LINK_MODE=copy UV_COMPILE_BYTECODE=1
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgl1=1.6.0-1 libglib2.0-0=2.74.6-2+deb12u9 libseccomp2=2.5.4-1+deb12u1 \
+    && rm -rf /var/lib/apt/lists/*
+COPY infra/docker/requirements-ml-linux.lock /tmp/requirements-ml.lock
+COPY infra/docker/requirements-parser-service.lock /tmp/requirements-service.lock
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv venv /app/.venv-parser && \
+    uv pip install --python /app/.venv-parser/bin/python --torch-backend cpu --require-hashes \
+    -r /tmp/requirements-ml.lock -r /tmp/requirements-service.lock && \
+    uv pip check --python /app/.venv-parser/bin/python
+
+FROM parser-dependencies AS parser
+COPY --from=workspace /app /app
+COPY parser-assets.lock.json /app/parser-assets.lock.json
+COPY infra/compose/parser-profile.json /app/infra/compose/parser-profile.json
+WORKDIR /app
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv pip install --python /app/.venv-parser/bin/python --no-deps \
+    ./packages/contracts ./packages/service-clients ./packages/observability ./apps/ingestion-worker && \
+    uv pip check --python /app/.venv-parser/bin/python
+# RLIMIT_NPROC counts Linux real-UID threads across containers. This single
+# ingestion profile must not share the service/ML UID 10001.
+RUN groupadd --gid 10003 expert_ingest && useradd --uid 10003 --gid expert_ingest --no-create-home expert_ingest
+ENV HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HUB_DISABLE_TELEMETRY=1 \
+    DO_NOT_TRACK=1 TOKENIZERS_PARALLELISM=false \
+    OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 \
+    PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PATH=/app/.venv/bin:$PATH
+USER 10003:10003
+EXPOSE 8000
+HEALTHCHECK --interval=10s --timeout=4s --start-period=15s --retries=6 \
+    CMD ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=3).read()"]

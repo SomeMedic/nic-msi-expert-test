@@ -1,0 +1,34 @@
+# Compatibility overlay for the measured parser profile now used by default.
+# Assets are prepared and verified before use. The child receives no credentials;
+# Landlock and seccomp isolate it inside the networked ingestion parent container.
+services:
+  ingestion-worker:
+    user: "10003:10003"
+    image: "nic-msi-expert/ingestion-worker:p04-parser"
+    build:
+      context: "."
+      dockerfile: "infra/docker/Dockerfile.service"
+      target: "parser"
+      args:
+        EXPERT_PACKAGE: "expert-ingestion-worker"
+    cpus: 2
+    mem_limit: "6g"
+    memswap_limit: "6g"
+    pids_limit: 96
+    tmpfs: !override ["/tmp:size=768m,mode=1777"]
+    volumes:
+      - "./models/docling:/models/docling:ro"
+      - "./models/frida:/models/frida:ro"
+    environment:
+      EXPERT_INGESTION_JOB_TIMEOUT_SECONDS: "3600"
+      EXPERT_INGESTION_PARSER_PYTHON_PATH: "/app/.venv-parser/bin/python"
+      EXPERT_INGESTION_PARSER_PROFILE_PATH: "/app/infra/compose/parser-profile.json"
+      EXPERT_INGESTION_PARSER_ASSETS_LOCK_PATH: "/app/parser-assets.lock.json"
+      EXPERT_INGESTION_REGION_REVIEWS_PATH: "/app/config/parsing/region-reviews.json"
+      EXPERT_DOCLING_ARTIFACTS_PATH: "/models/docling"
+      EXPERT_EMBEDDING_MODEL_PATH: "/models/frida"
+      EXPERT_EMBEDDING_REVISION: "850455b605544a944739b25f81ddf812b6e3d0d5"
+      EXPERT_MODELS_LOCK_PATH: "/app/models.lock.json"
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+      OPENBLAS_NUM_THREADS: "2"

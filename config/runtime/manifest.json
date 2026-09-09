@@ -1,0 +1,462 @@
+{
+  "configuration_fingerprint": "fa10d3d990e059cc4d19acffa7170b7ee3f6514dea4eeabd1e080ad11845baf0",
+  "context_token_budget": 5000,
+  "effective_prompts": {
+    "roles": {
+      "critic": {
+        "max_output_tokens": 1600,
+        "prompt_sha256": "3236271bfd1c5797083e636a35b786fc02643040f8254bb2497c394d01ab472f",
+        "schema_sha256": "1ea61ead543397327c3150bebe26b2c1881690e8cf424a42fa64d2568d8c81dc",
+        "timeout_seconds": 120
+      },
+      "drafter": {
+        "max_output_tokens": 1600,
+        "prompt_sha256": "72ff07ac72522e84d84214bd9d775669289d4e951c870ef6d1517fe6d2598596",
+        "schema_sha256": "04419a2154343672cffb198ecb3ebaa9e45fa0c0d11468f90b7bd937702f1481",
+        "timeout_seconds": 120
+      },
+      "repair": {
+        "max_output_tokens": 1600,
+        "prompt_sha256": "ca982caa3d4118682dbdfa4878a5549550d94a1eebcd823447b7913f4488f8fb",
+        "schema_sha256": "04419a2154343672cffb198ecb3ebaa9e45fa0c0d11468f90b7bd937702f1481",
+        "timeout_seconds": 120
+      },
+      "router": {
+        "max_output_tokens": 512,
+        "prompt_sha256": "4b98042f3759ff64c213d3c86b06687d168a1258a30f9801c8df44cd079f6100",
+        "schema_sha256": "5885bb16940ec47ea7bd27fc103aa1d62d069754e2613e5a68f3d46c0f8f5b22",
+        "timeout_seconds": 60
+      }
+    },
+    "version": "p07.v1"
+  },
+  "files": [
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/pyproject.toml",
+      "sha256": "04dbc5b29e59524e0ac28f1c3baa8916629dfd59b3e69c314a5b8890a244cdca",
+      "size_bytes": 421
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/__init__.py",
+      "sha256": "3e0111ced691da7dea051107568c7020463be28ba331510fa8478f0c6636dad3",
+      "size_bytes": 44
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/api/__init__.py",
+      "sha256": "c222e4c104b187d029ef9abbd582aa187860f821e9bb484d10ff9584ecbda4df",
+      "size_bytes": 82
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/api/runs.py",
+      "sha256": "15d86bbeb4568889a5a4678b3fc21d6c09166289db334a9db0524203610eb8f8",
+      "size_bytes": 3746
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/application.py",
+      "sha256": "3a9dea6995f017c0b3cc4fd9883ad9b9cdb984f60fba76d3077529e2aa145b16",
+      "size_bytes": 4770
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/checkpoint.py",
+      "sha256": "ac6d887dd03019f4e0a859584bc7e0419efe889cc896bebb9d7a4fce7ff938d2",
+      "size_bytes": 7712
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/debug_capture.py",
+      "sha256": "ec30b0118b82b830d050bce006f5133801240e346b8cb3eaa2b9d48ee6cdf0c6",
+      "size_bytes": 5422
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/execution.py",
+      "sha256": "84f57759928b515edc7f8ecb8c381c44958da4cd7b860b43b441499f60e10fbb",
+      "size_bytes": 16852
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/graph.py",
+      "sha256": "90c436c8b857cf20faca03cfa0d9d8a565a8fb247ba6d825abf6ad6209889668",
+      "size_bytes": 24063
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/llm/__init__.py",
+      "sha256": "b73bdd0d386d68ae06966d909789214f51cad35945f7f1c06f36c118a7c5a1c7",
+      "size_bytes": 291
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/llm/client.py",
+      "sha256": "c4561ad61394ed74d34c363e354292ca9fe7cb348faf6bce1b7006db99a9ac29",
+      "size_bytes": 20999
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/llm/prompts.py",
+      "sha256": "8b489f3a48d241eae7782e0190b20896e940d8cd1abbfb088b490d3966d12cfa",
+      "size_bytes": 31293
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/llm/types.py",
+      "sha256": "11fab6fcac2de85c995a860919dba96e1c1e3069a056fa8ab2dc7d8b9f121d3a",
+      "size_bytes": 5765
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/main.py",
+      "sha256": "59ba5e279ce5f5053c329317bc1c3ed24323c4de55e9abdd9a816542e8eebfdc",
+      "size_bytes": 355
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/rendering.py",
+      "sha256": "3ad11cf9527f9668bf5975155e1e4d311098e19e1b6f53d2af2c868c74d00450",
+      "size_bytes": 3915
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/repository.py",
+      "sha256": "b601d7dea9c54c37d60677bc12c1869f8cbfc425a9a0174dccbb21952f8e1a06",
+      "size_bytes": 11618
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/retrieval/__init__.py",
+      "sha256": "4105131e9406c7d26ef9e05da8a8f28e584610ae54c1011d9bbb38d3f43101d9",
+      "size_bytes": 76
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/retrieval/expansion.py",
+      "sha256": "2479debebe25336caa15fb7f6a94b586724c0bd00ffc198fe21ade73d322d1f9",
+      "size_bytes": 29528
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/retrieval/fusion.py",
+      "sha256": "ea8376fbc7d22b7593ed02b52372c3b193cb0fd20801fc40a2383a86ac310eb2",
+      "size_bytes": 1239
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/retrieval/ml.py",
+      "sha256": "03f49f31303744753d4e66efdfc0a71675f892388092f5feb01b28d6b1efb2b6",
+      "size_bytes": 10709
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/retrieval/repository.py",
+      "sha256": "40dabf0083840fa5c197ccbe2285ee23ce3abfbc131cc8c414d074d3e343a557",
+      "size_bytes": 18241
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/retrieval/service.py",
+      "sha256": "61fb75ee4531813ad9bcdae85a0dd292bab81733260e6af49e469d2a5254c120",
+      "size_bytes": 7231
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/retrieval/sources.py",
+      "sha256": "d234091533f87bd6a6ef6d8652a2714d3284a8721068efcff65623dbe2e5374a",
+      "size_bytes": 3851
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/retrieval/types.py",
+      "sha256": "10dd5fdee4e6863632745f905d6dcfeee02fd4eeb4e6aa7787d7c724fd53586e",
+      "size_bytes": 5847
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/run_manager.py",
+      "sha256": "1ab9d3a71d8ecc4e081a31a355dc566cbcc431cc8b37d53c43e37d0605b60a0d",
+      "size_bytes": 21352
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/runtime.py",
+      "sha256": "a739a22185edcd2a1a41219ff0dd2224a7443b1cd4c73c916890541f86d9171c",
+      "size_bytes": 7469
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/table_context.py",
+      "sha256": "5e4bae292ec7860e879ac861ae8f97fed2ecb629b115232e52018c72e1bc878f",
+      "size_bytes": 13937
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "apps/agent-runtime/src/expert_agent/validation.py",
+      "sha256": "986d549bdfa7f30f8f6a17da17d7b586aff4a454ee1ec67cbdfc6a1e304dd081",
+      "size_bytes": 14577
+    },
+    {
+      "hash_mode": "raw",
+      "path": "config/prompts/p07.v1/critic.txt",
+      "sha256": "922692023f36d2028d2ce8c150d4350c1cc8437d1bbe9157c9bdf465c3d82c33",
+      "size_bytes": 6567
+    },
+    {
+      "hash_mode": "raw",
+      "path": "config/prompts/p07.v1/drafter.txt",
+      "sha256": "65128941d8efe8a1f9944bd9bd63f70da09f71f35e23411be4e47d56a599bbcf",
+      "size_bytes": 5820
+    },
+    {
+      "hash_mode": "raw",
+      "path": "config/prompts/p07.v1/manifest.json",
+      "sha256": "2fca6b9c1f64f73c7468a29574eaf3454da4feb9d3e96a6578f4c3fa654f40a9",
+      "size_bytes": 563
+    },
+    {
+      "hash_mode": "raw",
+      "path": "config/prompts/p07.v1/repair.txt",
+      "sha256": "6ec870d8b664cc0c3f569cee9b72298f7d196a86b48531c837edb6ae63ffa90b",
+      "size_bytes": 5128
+    },
+    {
+      "hash_mode": "raw",
+      "path": "config/prompts/p07.v1/router.txt",
+      "sha256": "210d9a90c6bec62e6891556d9011c447caf2bc1209f5cba4ed04d497e5520bb8",
+      "size_bytes": 2178
+    },
+    {
+      "hash_mode": "raw",
+      "path": "config/runtime/serving-profile.json",
+      "sha256": "0b06a14e5fae2bb6293525d719e316f0602b9a9d9173bd9f3489dd6318b8c071",
+      "size_bytes": 849
+    },
+    {
+      "hash_mode": "raw",
+      "path": "models.lock.json",
+      "sha256": "524f2c8863e8354ff484560bf9a149a0bf5c2d6d9c80a3e3be2fd94d2235e0bf",
+      "size_bytes": 18377
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/pyproject.toml",
+      "sha256": "fbea593d5638ce870e03dba7b91837ad318c8d54bd63488d5762750a94576297",
+      "size_bytes": 342
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/__init__.py",
+      "sha256": "667846ef3d9bbcabbff15d6e8774de867a968fdd8ecda0eb9414bb39dba44c62",
+      "size_bytes": 4496
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/auth.py",
+      "sha256": "808abfd3d8c15f0b430f6cac3e283f60e0308bff6967c49cc17763518cff7207",
+      "size_bytes": 549
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/common.py",
+      "sha256": "f329d98c5ed12d79dd7361f2048062ee3d4bf7921b9f8b63a9a54f1c4bf7a72b",
+      "size_bytes": 3704
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/debug.py",
+      "sha256": "99c5fa95cc5cb38e0b22c02e61dc1d3668242deb13a4f254fad91d0b3956d994",
+      "size_bytes": 4037
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/debug_capture.py",
+      "sha256": "99668178e9e2378c573784c08a07339d29605e685b63d2691e67680350feab5f",
+      "size_bytes": 6858
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/documents.py",
+      "sha256": "2f1afe4b45c8fde951ea6476e6c1bf919aa60036d9d06cf386cbf037e42758d3",
+      "size_bytes": 9507
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/errors.py",
+      "sha256": "9ad714b797da9fe5acc7a9b2fd5147c5b3716a7259a0dace44666d27a53b93e0",
+      "size_bytes": 3811
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/events.py",
+      "sha256": "c3cbbf70cc5225b2f483aa1d3170a64b2830ba0bada31e8e5ae1afc1511510a0",
+      "size_bytes": 5481
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/inference.py",
+      "sha256": "532c6a12cb57fc662feb6eb60ef4379a813336875d7cabd92eae82884b5774ed",
+      "size_bytes": 4821
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/internal.py",
+      "sha256": "6d570ba9452224d19ab611aac44bc287586ad5839e89d30a918248b0a1001b59",
+      "size_bytes": 3850
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/ml_profile.py",
+      "sha256": "d9cb1f8262c1669055d6b36a562d99d1a986fdaeef5c63a88b54852da7eb9443",
+      "size_bytes": 2450
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/model.py",
+      "sha256": "93940928b0a5e81c332237073ff0ca20ba5750520ea427904f576bb96109fd5f",
+      "size_bytes": 4716
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/purge.py",
+      "sha256": "3fdb7a451b95837ac48057950c9bad5800edd091a112a5b4cda7625d934dc95f",
+      "size_bytes": 3753
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/retrieval_sources.py",
+      "sha256": "793c792b00b327a1c8d24844ef20722ced0926b5f1d9777d35f9e1f8dcc4d964",
+      "size_bytes": 5082
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/runs.py",
+      "sha256": "276317f435e5ac369bd1446f310baf0d10870295aa350f1a7af79c139822eac5",
+      "size_bytes": 7609
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/sources.py",
+      "sha256": "31f0438aed213f5a412967ce37103a89ed95c6a333d2dcbce7cfc6a24194dd68",
+      "size_bytes": 3012
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/structure.py",
+      "sha256": "a20ad7b5cb253ff80a7a12521f9175174107573007b20f075322427bf398d8d0",
+      "size_bytes": 10146
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/contracts/src/expert_contracts/system.py",
+      "sha256": "1b1649e5ca766e91958e37b27156486b921a241f6a0083d64865f4179f2ef802",
+      "size_bytes": 1187
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/service-clients/pyproject.toml",
+      "sha256": "9104290755a8e854d76e1d03f65472c5cd40b408f47af5043f3d40f5b75620a0",
+      "size_bytes": 447
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/service-clients/src/expert_clients/__init__.py",
+      "sha256": "96a46adc840ee3704fc36b76daca3478772954ef35704598e570dd79ac87573f",
+      "size_bytes": 77
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/service-clients/src/expert_clients/dependencies.py",
+      "sha256": "30b2fdd94df6e8dce28cc9a2180d9c565d55004f0803226e67d30c19bdfdd383",
+      "size_bytes": 3887
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/service-clients/src/expert_clients/health.py",
+      "sha256": "9cbcb42cd10de9033649318c0845dda0aa7c880dad16ac86d00c9271660ec15a",
+      "size_bytes": 1522
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/service-clients/src/expert_clients/http.py",
+      "sha256": "e113b1338d7d74f7660f54abbd25b25ea4618d871ed4f0b1405b3b2306b72db4",
+      "size_bytes": 6624
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/service-clients/src/expert_clients/runtime_identity.py",
+      "sha256": "ca2f0987a4802fe32305061322b44eb6e0137aafacdce4cc6d9123e713574c7d",
+      "size_bytes": 12879
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "packages/service-clients/src/expert_clients/settings.py",
+      "sha256": "d18d4c803b39ba6e2716b90541be1452945ae8db57684b09fa76c769819d4745",
+      "size_bytes": 15310
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "pyproject.toml",
+      "sha256": "e2c5328c644d994ad5da50eb89d12bb422812f827b30286144402b319f0f3515",
+      "size_bytes": 1139
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "scripts/prepare_runtime_identity.py",
+      "sha256": "c858e1be526755e3290bcd67c86eecb19f4a349f4b98a0075a21d7b6870e880e",
+      "size_bytes": 4411
+    },
+    {
+      "hash_mode": "utf8-lf",
+      "path": "uv.lock",
+      "sha256": "bf512d3552dd06b809fb941091ff8e6556b461cebe05f1b7e394204864ac54c8",
+      "size_bytes": 186972
+    }
+  ],
+  "graph_version": "p08.graph.v1",
+  "release_state": "frozen",
+  "retrieval_config": {
+    "dense_top_k": 20,
+    "descriptor_top_k": 12,
+    "fusion_top_k": 20,
+    "lexical_top_k": 20,
+    "max_ancestor_depth": 32,
+    "max_context_candidates": 8,
+    "max_excerpt_characters": 30000,
+    "max_expansion_nodes": 128,
+    "max_lexical_terms": 128,
+    "max_units": 72,
+    "rerank_top_k": 6,
+    "rrf_constant": 60,
+    "statement_timeout_ms": 10000
+  },
+  "schema_version": "p08.runtime.v1",
+  "semantic_limits": {
+    "run_deadline_seconds": 300,
+    "run_global_concurrency": 1,
+    "run_heartbeat_seconds": 10,
+    "run_lease_seconds": 60,
+    "run_max_active_per_operator": 1,
+    "run_max_recovery_attempts": 2
+  },
+  "serving_profile": {
+    "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "disable_fallback": true,
+    "enable_thinking": false,
+    "image_digest": "sha256:f2309d913a07da49ea20b2a694703f4cfcb5ad8e7437ec0f26145479ac01e002",
+    "max_model_len": 8192,
+    "max_num_seqs": 1,
+    "model": "Qwen/Qwen3-14B-AWQ",
+    "model_fingerprint": "478ef24f43e559a232053444b72df5b81f4a5a0a3080aa4dd3f87ba45d205060",
+    "observed_config_sha256": "845b90622162dafd86a826fb77f62824c6c06db028ae201b34e7dcca277607e7",
+    "revision": "31c69efc29464b6bb0aee1398b5a7b50a99340c3",
+    "schema_version": "p07.vllm.v1",
+    "structured_backend": "xgrammar",
+    "tokenizer_fingerprint": "e17be3f67ebab06c584695b9fc28751b288af752013649e92609b94fed2349c3",
+    "tokenizer_revision": "31c69efc29464b6bb0aee1398b5a7b50a99340c3",
+    "vllm_version": "0.12.0"
+  }
+}

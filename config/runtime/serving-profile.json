@@ -1,0 +1,17 @@
+{
+  "schema_version": "p07.vllm.v1",
+  "model": "Qwen/Qwen3-14B-AWQ",
+  "revision": "31c69efc29464b6bb0aee1398b5a7b50a99340c3",
+  "tokenizer_revision": "31c69efc29464b6bb0aee1398b5a7b50a99340c3",
+  "image_digest": "sha256:f2309d913a07da49ea20b2a694703f4cfcb5ad8e7437ec0f26145479ac01e002",
+  "vllm_version": "0.12.0",
+  "structured_backend": "xgrammar",
+  "disable_fallback": true,
+  "enable_thinking": false,
+  "max_model_len": 8192,
+  "max_num_seqs": 1,
+  "model_fingerprint": "478ef24f43e559a232053444b72df5b81f4a5a0a3080aa4dd3f87ba45d205060",
+  "tokenizer_fingerprint": "e17be3f67ebab06c584695b9fc28751b288af752013649e92609b94fed2349c3",
+  "chat_template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+  "observed_config_sha256": "845b90622162dafd86a826fb77f62824c6c06db028ae201b34e7dcca277607e7"
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "declared_license": "Apache-2.0",
+  "model_family": "official_tesseract_traineddata",
+  "files": [
+    {
+      "local_path": "models/tessdata/Cyrillic.traineddata",
+      "repository": "tesseract-ocr/tessdata_best",
+      "revision": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+      "source_path": "script/Cyrillic.traineddata",
+      "source_url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/e12c65a915945e4c28e237a9b52bc4a8f39a0cec/script/Cyrillic.traineddata",
+      "size_bytes": 36730735,
+      "git_blob_sha1": "e59e62b1cfe708339004436d8af2a965684e5250",
+      "sha256": "4ad9e44d219e2c18ac1d7dccc79863408acde090d9875908517606942a951018",
+      "purpose": "bounded_compatibility_comparison_not_production_selection"
+    },
+    {
+      "local_path": "models/tessdata/eng-standard.traineddata",
+      "repository": "tesseract-ocr/tessdata",
+      "revision": "ced78752cc61322fb554c280d13360b35b8684e4",
+      "source_path": "eng.traineddata",
+      "source_url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata/ced78752cc61322fb554c280d13360b35b8684e4/eng.traineddata",
+      "size_bytes": 23466654,
+      "git_blob_sha1": "f4744c201359d02ced6914c77f0de68ee9bbdd74",
+      "sha256": "daa0c97d651c19fba3b25e81317cd697e9908c8208090c94c3905381c23fc047",
+      "purpose": "bounded_compatibility_comparison_not_production_selection"
+    },
+    {
+      "local_path": "models/tessdata/eng.traineddata",
+      "repository": "tesseract-ocr/tessdata_best",
+      "revision": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+      "source_path": "eng.traineddata",
+      "source_url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/e12c65a915945e4c28e237a9b52bc4a8f39a0cec/eng.traineddata",
+      "size_bytes": 15400601,
+      "git_blob_sha1": "176dc3220de7db34d3b3aecbfa42043a6038348b",
+      "sha256": "8280aed0782fe27257a68ea10fe7ef324ca0f8d85bd2fd145d1c2b560bcb66ba",
+      "purpose": "bounded_compatibility_comparison_not_production_selection"
+    },
+    {
+      "local_path": "models/tessdata/Latin.traineddata",
+      "repository": "tesseract-ocr/tessdata_best",
+      "revision": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+      "source_path": "script/Latin.traineddata",
+      "source_url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/e12c65a915945e4c28e237a9b52bc4a8f39a0cec/script/Latin.traineddata",
+      "size_bytes": 101402885,
+      "git_blob_sha1": "e78c193f637e0bcbeeb9ed2919f2e4ac68cb972d",
+      "sha256": "cf7216998bf7f363f18e3def04cc6b28ae954d2a5a3bdad09f743c9d3538ef35",
+      "purpose": "bounded_compatibility_comparison_not_production_selection"
+    },
+    {
+      "local_path": "models/tessdata/LICENSE",
+      "repository": "tesseract-ocr/tessdata_best",
+      "revision": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+      "source_path": "LICENSE",
+      "source_url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/e12c65a915945e4c28e237a9b52bc4a8f39a0cec/LICENSE",
+      "size_bytes": 10173,
+      "git_blob_sha1": "d9a10c0d8e868ebf8da0b3dc95bb0be634c34bfe",
+      "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+      "purpose": "bounded_compatibility_comparison_not_production_selection"
+    },
+    {
+      "local_path": "models/tessdata/osd.traineddata",
+      "repository": "tesseract-ocr/tessdata_best",
+      "revision": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+      "source_path": "osd.traineddata",
+      "source_url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/e12c65a915945e4c28e237a9b52bc4a8f39a0cec/osd.traineddata",
+      "size_bytes": 10562727,
+      "git_blob_sha1": "527457ca8f8fe1fda7c2f88bce3c0e4be12be9d0",
+      "sha256": "9cf5d576fcc47564f11265841e5ca839001e7e6f38ff7f7aacf46d15a96b00ff",
+      "purpose": "bounded_compatibility_comparison_not_production_selection"
+    },
+    {
+      "local_path": "models/tessdata/README.md",
+      "repository": "tesseract-ocr/tessdata_best",
+      "revision": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+      "source_path": "README.md",
+      "source_url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/e12c65a915945e4c28e237a9b52bc4a8f39a0cec/README.md",
+      "size_bytes": 470,
+      "git_blob_sha1": "4b1345ed197d9d62b7cd9e5ac9043c1ed7df1a58",
+      "sha256": "08c87523fb799c5bae6380f6ffa1a823494ab78f63906d7255dddd7671f94a5f",
+      "purpose": "bounded_compatibility_comparison_not_production_selection"
+    },
+    {
+      "local_path": "models/tessdata/rus-standard.traineddata",
+      "repository": "tesseract-ocr/tessdata",
+      "revision": "ced78752cc61322fb554c280d13360b35b8684e4",
+      "source_path": "rus.traineddata",
+      "source_url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata/ced78752cc61322fb554c280d13360b35b8684e4/rus.traineddata",
+      "size_bytes": 19920885,
+      "git_blob_sha1": "8b71c2d3814369d85f8ca75e7a265aaa3d3ab9ae",
+      "sha256": "681be2c2bead1bc7bd235df88c44e8e60ae73ae866840c0ad4e3b4c247bd37c2",
+      "purpose": "bounded_compatibility_comparison_not_production_selection"
+    },
+    {
+      "local_path": "models/tessdata/rus.traineddata",
+      "repository": "tesseract-ocr/tessdata_best",
+      "revision": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+      "source_path": "rus.traineddata",
+      "source_url": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/e12c65a915945e4c28e237a9b52bc4a8f39a0cec/rus.traineddata",
+      "size_bytes": 15301764,
+      "git_blob_sha1": "702e3c43c863cf3325002c9d2cc38045e01314a9",
+      "sha256": "b617eb6830ffabaaa795dd87ea7fd251adfe9cf0efe05eb9a2e8128b7728d6b6",
+      "purpose": "bounded_compatibility_comparison_not_production_selection"
+    }
+  ],
+  "baseline_language": "rus+eng",
+  "baseline_engine": "PyMuPDF 1.28.2 integrated Tesseract, local tessdata parameter",
+  "symbol_support_status": "plusminus_and_superscript3_absent_in_inspected_recognition_charsets",
+  "production_selected": false
+}

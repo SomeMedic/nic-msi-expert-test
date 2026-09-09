@@ -1,0 +1,13 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "expert-contracts"
+version = "0.1.0"
+description = "Shared public, internal and model contracts for Digital Expert"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.12,<3"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/expert_contracts"]

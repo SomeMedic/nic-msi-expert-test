@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling==1.32.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "expert-service-clients"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "expert-contracts",
+  "pydantic==2.13.5",
+  "pydantic-settings==2.15.0",
+  "psycopg[binary]==3.3.5",
+  "psycopg-pool==3.3.1",
+  "redis==8.1.0",
+  "boto3==1.43.89",
+  "httpx==0.28.1"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/expert_clients"]

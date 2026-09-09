@@ -1,0 +1,21 @@
+{
+  "schema_version": "p04.region-reviews.v1",
+  "reviews": [
+    {
+      "schema_version": "p04.region-review.v1",
+      "source_sha256": "fb9a8f3ce8d2627bf953b5193cd31dc93e314711a68a8da09ca1a147ff129586",
+      "pdf_page": 1,
+      "bbox": [
+        36.0,
+        49.0,
+        336.0,
+        120.0
+      ],
+      "crop_sha256": "03a88b4c3bfa70c6c3f4475281b97e12ac94bb85dd06786845ad950781616711",
+      "render_dpi": 144,
+      "disposition": "non_normative_graphic",
+      "reviewer": "codex-visual-review",
+      "method": "visual_inspection"
+    }
+  ]
+}

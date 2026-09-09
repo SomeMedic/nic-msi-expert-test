@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling==1.32.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "expert-backend"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "expert-contracts",
+  "expert-service-clients",
+  "expert-observability",
+  "uvicorn==0.52.4",
+  "alembic==1.19.2",
+  "python-multipart==0.0.32"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/expert_api"]

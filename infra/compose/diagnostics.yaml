@@ -1,0 +1,27 @@
+# Diagnostic targets get an edge bridge because internal-only Docker bridges suppress host bindings.
+# Model services retain internal-only networking.
+services:
+  postgres:
+    networks: [app_internal, edge]
+    ports: ["127.0.0.1:${EXPERT_POSTGRES_PORT:-25432}:5432"]
+  redis:
+    networks: [app_internal, edge]
+    ports: ["127.0.0.1:${EXPERT_REDIS_PORT:-56379}:6379"]
+  object-storage:
+    networks: [app_internal, edge]
+    ports: ["127.0.0.1:${EXPERT_S3_PORT:-59000}:9000", "127.0.0.1:${EXPERT_S3_CONSOLE_PORT:-59001}:9001"]
+  backend:
+    networks: [app_internal, observability_internal, edge]
+    ports: ["127.0.0.1:${EXPERT_BACKEND_PORT:-18080}:8000"]
+  agent-runtime:
+    networks: [app_internal, model_internal, observability_internal, edge]
+    ports: ["127.0.0.1:${EXPERT_AGENT_PORT:-18081}:8000"]
+  ingestion-worker:
+    networks: [app_internal, model_internal, observability_internal, edge]
+    ports: ["127.0.0.1:${EXPERT_INGESTION_PORT:-18082}:8000"]
+  outbox-publisher:
+    networks: [app_internal, observability_internal, edge]
+    ports: ["127.0.0.1:${EXPERT_OUTBOX_PORT:-18083}:8000"]
+  jaeger:
+    networks: [observability_internal, edge]
+    ports: ["127.0.0.1:${EXPERT_JAEGER_PORT:-16687}:16686"]

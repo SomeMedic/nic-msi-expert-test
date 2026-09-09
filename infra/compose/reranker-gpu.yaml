@@ -1,0 +1,13 @@
+# Optional GPU-capable image. Select CPU or CUDA scoring through ENV; CPU stays
+# the default even in this image. FRIDA continues in the original CPU environment.
+services:
+  retrieval-ml:
+    build:
+      target: retrieval-ml-cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

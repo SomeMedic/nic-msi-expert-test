@@ -1,0 +1,18 @@
+{
+  "version": "p07.v1",
+  "source": "docs/implementation/source_text/19_Agent_System_Prompts.txt",
+  "prompts": {
+    "router": {
+      "sha256": "210d9a90c6bec62e6891556d9011c447caf2bc1209f5cba4ed04d497e5520bb8"
+    },
+    "drafter": {
+      "sha256": "65128941d8efe8a1f9944bd9bd63f70da09f71f35e23411be4e47d56a599bbcf"
+    },
+    "critic": {
+      "sha256": "922692023f36d2028d2ce8c150d4350c1cc8437d1bbe9157c9bdf465c3d82c33"
+    },
+    "repair": {
+      "sha256": "6ec870d8b664cc0c3f569cee9b72298f7d196a86b48531c837edb6ae63ffa90b"
+    }
+  }
+}

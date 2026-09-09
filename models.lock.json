@@ -1,0 +1,416 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-07T22:34:32.090831+00:00",
+  "status": "p00_runtime_smoke_passed_with_parser_quality_limits_not_production_verified",
+  "models": {
+    "llm": {
+      "model_id": "Qwen/Qwen3-14B-AWQ",
+      "revision": "31c69efc29464b6bb0aee1398b5a7b50a99340c3",
+      "tokenizer_revision": "31c69efc29464b6bb0aee1398b5a7b50a99340c3",
+      "local_path": "models/qwen3-14b-awq",
+      "declared_license": "apache-2.0",
+      "license_evidence": "LICENSE",
+      "metadata_source": "https://huggingface.co/api/models/Qwen/Qwen3-14B-AWQ?blobs=true",
+      "files": [
+        {
+          "path": "LICENSE",
+          "size_bytes": 11544,
+          "sha256": "5de36594c10839788a8c589443a8ef9d8b8d17c65a1b5807206ae037fc36c6bd",
+          "git_blob_sha1": "6f9739bb281a3d2ade8fb5f6dd6dde597a739c80",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 16885,
+          "sha256": "0d3e27f85167f83769abfb5eb6ad2069be4a1bc7835cfec1612dd1aa1ac546fa",
+          "git_blob_sha1": "6ba98def472ad73c5cc6849d5da9e8389b0f88af",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 907,
+          "sha256": "5244a80c9acdc63504acff475a9c84044cca0f62cb4f184fe0cf7d1792fafb5a",
+          "git_blob_sha1": "f05252483c338f12a888a7f59698f1ea405e60e2",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 239,
+          "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+          "git_blob_sha1": "20a8a9156fc8c3f25295ca067f61fdf120d517c5",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671853,
+          "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "model-00001-of-00002.safetensors",
+          "size_bytes": 4988339832,
+          "sha256": "668eb0f1356638310db286f4819b223c12e3916934123f1a81b2b2c0e148c6a2",
+          "git_blob_sha1": null,
+          "sha256_provenance": "upstream_lfs_and_local_verification"
+        },
+        {
+          "path": "model-00002-of-00002.safetensors",
+          "size_bytes": 4988350408,
+          "sha256": "c3c1625df80fe01211038bfa520629ebde6adf776556aa80cd49696d986d6657",
+          "git_blob_sha1": null,
+          "sha256_provenance": "upstream_lfs_and_local_verification"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size_bytes": 82253,
+          "sha256": "b8243c9f4e592643b48eb2c35f99f5a6c160a2e8a89b01075e05701871851997",
+          "git_blob_sha1": "2ff701afad2fc062c13976386e06b7ade7d81f12",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+          "git_blob_sha1": null,
+          "sha256_provenance": "upstream_lfs_and_local_verification"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 9732,
+          "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+          "git_blob_sha1": "417d038a63fa3de29cfde265caedae14d1a58d92",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        }
+      ],
+      "total_size_bytes": 9992683140,
+      "runtime_smoke_status": "passed_p00_synthetic_not_production_verified",
+      "contract": {
+        "architecture": "Qwen3ForCausalLM",
+        "quantization": "awq",
+        "bits": 4,
+        "group_size": 128,
+        "quantization_version": "gemm",
+        "dtype": "float16",
+        "enable_thinking": false,
+        "max_model_len_candidate": 8192,
+        "max_num_seqs": 1,
+        "structured_output_backend": "xgrammar",
+        "device": "cuda"
+      },
+      "artifact_verification": {
+        "status": "verified",
+        "verified_at": "2026-09-07T22:41:51.805438+00:00",
+        "report_path": "models/qwen3-14b-awq/artifact_verification.json"
+      }
+    },
+    "embedding": {
+      "model_id": "ai-forever/FRIDA",
+      "revision": "850455b605544a944739b25f81ddf812b6e3d0d5",
+      "tokenizer_revision": "850455b605544a944739b25f81ddf812b6e3d0d5",
+      "local_path": "models/frida",
+      "declared_license": "mit",
+      "license_evidence": "README.md YAML metadata; standalone LICENSE absent upstream",
+      "metadata_source": "https://huggingface.co/api/models/ai-forever/FRIDA?blobs=true",
+      "files": [
+        {
+          "path": "1_Pooling/config.json",
+          "size_bytes": 297,
+          "sha256": "1aa71bda3d1d8eea7e361a472849dda1961f3b960b4d62a37f2b1cc04faad529",
+          "git_blob_sha1": "0c707194058315d455b07d5726b6a21029852c16",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 7652,
+          "sha256": "63c14860029244a4aedb6f3172ffd24b3998148d0abbd405645c406208512588",
+          "git_blob_sha1": "886a07665b77afb725abb31ab704344e873d1f15",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 823,
+          "sha256": "c5d80c5870aa65a25b81191369a7c89a4c200c40f6be944aa04edb02a5775468",
+          "git_blob_sha1": "d81fbec6157c756b73945731a0739880aa23ea65",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "config_sentence_transformers.json",
+          "size_bytes": 509,
+          "sha256": "532f893bc4255c167cf7f6290365d96a6dadcdf4be587382057f77c4ee0072ea",
+          "git_blob_sha1": "bfbc7c07e7ebaac61ebacb6fbb47ac7ab9d0cf9a",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1677769,
+          "sha256": "6c9a6817693a5fe4a0f8b0f8f972e5eb6e949848788e58a17f9f99a1bd1a46ce",
+          "git_blob_sha1": "280e430f6f5d81e2588f0fc4c26fd77395ee2bba",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "model.safetensors",
+          "size_bytes": 3293631728,
+          "sha256": "f48a05972031f3e9b4799b548a148215097f148332c8a68c3bf575497d6a0d43",
+          "git_blob_sha1": null,
+          "sha256_provenance": "upstream_lfs_and_local_verification"
+        },
+        {
+          "path": "modules.json",
+          "size_bytes": 349,
+          "sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+          "git_blob_sha1": "952a9b81c0bfd99800fabf352f69c7ccd46c5e43",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "sentence_bert_config.json",
+          "size_bytes": 53,
+          "sha256": "ec8e29d6dcb61b611b7d3fdd2982c4524e6ad985959fa7194eacfb655a8d0d51",
+          "git_blob_sha1": "f789d99277496b282d19020415c5ba9ca79ac875",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size_bytes": 958,
+          "sha256": "f23c8e6099631c233c16d9bf8dab198f610826cdd1b358f270f6d55c1863e857",
+          "git_blob_sha1": "14f7c9ed7b0bde6d23ee7b6a24ac2996789d1a0b",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 5592981,
+          "sha256": "fad60ebecad875f146cac79ab7774047b9896a050bd6a1ed4362bfbdb0ffb503",
+          "git_blob_sha1": "9e227e04bd74483855b046cdd236058fecc9b937",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 1187,
+          "sha256": "cb24bba0d239f59144ae91cbf509e4a3142ddfd90f78a62a7a9ab210596039ca",
+          "git_blob_sha1": "57490e5c65f6b9b7217f47dda3695a915273055d",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2697150,
+          "sha256": "c232c6bbb6b98625ff95050808345d935f8831c7a0d75c3186816f0c738ce748",
+          "git_blob_sha1": "a8e21eb6e1242cce2dcad1b200337a23c10afe27",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        }
+      ],
+      "total_size_bytes": 3303611456,
+      "runtime_smoke_status": "passed_p00_synthetic_not_production_verified",
+      "contract": {
+        "architecture": "T5EncoderModel",
+        "pooling": "cls_first_token",
+        "dimension": 1536,
+        "max_input_tokens": 512,
+        "normalized": true,
+        "query_prefix": "search_query: ",
+        "document_prefix": "search_document: ",
+        "device": "cpu",
+        "dtype": "float32",
+        "silent_truncation": false
+      },
+      "artifact_verification": {
+        "status": "verified",
+        "verified_at": "2026-09-07T22:40:22.485550+00:00",
+        "report_path": "models/frida/artifact_verification.json"
+      }
+    },
+    "reranker": {
+      "model_id": "Qwen/Qwen3-Reranker-0.6B",
+      "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+      "tokenizer_revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+      "local_path": "models/qwen3-reranker-0.6b",
+      "declared_license": "apache-2.0",
+      "license_evidence": "README.md YAML metadata; standalone LICENSE absent upstream",
+      "metadata_source": "https://huggingface.co/api/models/Qwen/Qwen3-Reranker-0.6B?blobs=true",
+      "files": [
+        {
+          "path": "1_LogitScore/config.json",
+          "size_bytes": 57,
+          "sha256": "73e3156450564d8a98b7e47bcf5aace0f29600828b51937da545571e84db3ff3",
+          "git_blob_sha1": "d2c77fa4fc4e2bdba0fbd2caa97f7272f7c9e967",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 14742,
+          "sha256": "5bba8c734f6dd3ae48317b4139317e45a7fce48fc55e15670b23a0dd15492ab6",
+          "git_blob_sha1": "b8bfdef6c3cd9297bf8f5965c87edbee65a444aa",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "chat_template.jinja",
+          "size_bytes": 741,
+          "sha256": "6f682162495ec5b39fd9005c01b6aa2a74669379fe967039f1e2cbbe8752369d",
+          "git_blob_sha1": "63b97f268a9ddb9c6b34e6d7d8ef531d1fee9cf4",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 727,
+          "sha256": "d479c427a9ca5295218063d4f9aca4f297ab4ac27487cca7af42c84643d51ef0",
+          "git_blob_sha1": "39784456e9de7a06590f8a4a38760ac1fb38d65e",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "config_sentence_transformers.json",
+          "size_bytes": 325,
+          "sha256": "6a153d6696f78fd588c1c728967f0b773ea869d3c6028f151ce71ebe49140762",
+          "git_blob_sha1": "c6f8a7e0240028086cbce6b5c018874cf48cbeb7",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "generation_config.json",
+          "size_bytes": 214,
+          "sha256": "81051cd3f6e77013827148d0b8a6ead93f8ac390d5ab805f849199f0af6a08db",
+          "git_blob_sha1": "e4f1d3193e99a3e5d7047edf56e93a6e933fa31b",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "merges.txt",
+          "size_bytes": 1671853,
+          "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "model.safetensors",
+          "size_bytes": 1191588280,
+          "sha256": "27cd75a405b9c1b46b59abfd88aaa209e6fed2a1972cde9b70e7659537c5e65b",
+          "git_blob_sha1": null,
+          "sha256_provenance": "upstream_lfs_and_local_verification"
+        },
+        {
+          "path": "modules.json",
+          "size_bytes": 280,
+          "sha256": "6f13b6b4a89e577b591b2077bca40c67c26541a6740a8809267cb474f90806a9",
+          "git_blob_sha1": "008ceadb8aca5de2810344509a4ac73352f23428",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "sentence_bert_config.json",
+          "size_bytes": 362,
+          "sha256": "3234ebd224d492cbe8d55d5ec80a3f408451c4db3005bafb64fe1c51c763e01e",
+          "git_blob_sha1": "813a773d3bf36aa61b1760d80070c9d72c87e270",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+          "git_blob_sha1": null,
+          "sha256_provenance": "upstream_lfs_and_local_verification"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 9706,
+          "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+          "git_blob_sha1": "7345216a0785dc7086e8c245b2a9d3896ce2b756",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        },
+        {
+          "path": "vocab.json",
+          "size_bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+          "sha256_provenance": "local_after_upstream_git_blob_verification"
+        }
+      ],
+      "total_size_bytes": 1207486774,
+      "runtime_smoke_status": "passed_p00_synthetic_not_production_verified",
+      "contract": {
+        "architecture": "Qwen3ForCausalLM",
+        "adapter": "transformers_reference_yes_no",
+        "true_token_id": 9693,
+        "false_token_id": 2152,
+        "padding_side": "left",
+        "score_type": "sigmoid",
+        "score_formula": "sigmoid(logit_yes - logit_no)",
+        "instruction": "Given a web search query, retrieve relevant passages that answer the query",
+        "max_pair_tokens_candidate": 2048,
+        "device": "cpu",
+        "dtype": "float32",
+        "silent_truncation": false
+      },
+      "artifact_verification": {
+        "status": "verified",
+        "verified_at": "2026-09-07T22:40:22.487112+00:00",
+        "report_path": "models/qwen3-reranker-0.6b/artifact_verification.json"
+      }
+    }
+  },
+  "runtime": {
+    "llm": {
+      "image": "vllm/vllm-openai:v0.12.0",
+      "manifest_digest": "sha256:6766ce0c459e24b76f3e9ba14ffc0442131ef4248c904efdcbf0d89e38be01fe",
+      "linux_amd64_digest": "sha256:f2309d913a07da49ea20b2a694703f4cfcb5ad8e7437ec0f26145479ac01e002",
+      "python_major_minor": "3.12",
+      "cuda_image_base": "12.9.1",
+      "torch_required": "2.9.0",
+      "transformers_constraint": ">=4.56.0,<5",
+      "actual_installed_packages": {
+        "vllm": "0.12.0",
+        "torch": "2.9.0+cu129",
+        "transformers": "4.57.3",
+        "xgrammar": "0.1.27",
+        "huggingface-hub": "0.36.0"
+      },
+      "smoke_status": "passed_p00_10_scenarios_not_production_verified",
+      "observed_structured_backend": "auto",
+      "observed_disable_fallback": false
+    },
+    "retrieval_candidate": {
+      "python_major_minor": "3.12",
+      "torch": "2.9.0+cpu",
+      "transformers": "4.57.3",
+      "sentence-transformers_optional_parity_only": "5.2.0",
+      "dependency_resolution_status": "passed_locked_cpu_environment",
+      "smoke_status": "passed_p00_synthetic_not_production_verified"
+    },
+    "parser_candidate": {
+      "docling": "2.66.0",
+      "easyocr": "1.7.2",
+      "pymupdf": "1.28.2",
+      "torch": "2.9.0+cpu",
+      "torchvision": "0.24.0+cpu",
+      "device": "cpu",
+      "ocr_languages": [
+        "ru",
+        "en"
+      ],
+      "ocr_detection": "craft",
+      "ocr_recognition": "cyrillic_g2",
+      "assets_status": "verified",
+      "dependency_resolution_status": "passed_locked_cpu_environment",
+      "smoke_status": "executed_p00_quality_limits_plain_4_of_5_symbols_failed_not_production_verified",
+      "layout_model": {
+        "model_id": "docling-project/docling-layout-heron",
+        "revision": "8f39ad3c0b4c58e9c2d2c84a38465abf757272d8",
+        "declared_license": "apache-2.0"
+      },
+      "table_model": {
+        "model_id": "docling-project/docling-models",
+        "revision": "fc0f2d45e2218ea24bce5045f58a389aed16dc23",
+        "upstream_tag": "v2.3.0",
+        "declared_license": "cdla-permissive-2.0"
+      },
+      "assets_lock": "parser-assets.lock.json"
+    }
+  },
+  "notes": [
+    "No weights or hardware smoke results are implied by official metadata verification.",
+    "All model files are fetched from their pinned revision; SHA256 is upstream LFS SHA256, or Git blob SHA1 verifies non-LFS content.",
+    "No alternate quantization or remote inference fallback is authorized by this manifest.",
+    "Top-level package candidates require separate full transitive lock and pip check before runtime acceptance."
+  ]
+}

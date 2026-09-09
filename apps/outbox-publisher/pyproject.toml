@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling==1.32.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "expert-outbox-publisher"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "expert-contracts",
+  "expert-service-clients",
+  "expert-observability",
+  "uvicorn==0.52.4"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/expert_outbox"]
+
